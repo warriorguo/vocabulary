@@ -112,6 +112,7 @@ body {
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  width: calc(100% - 2rem);
 }
 
 .word-header {
@@ -268,6 +269,7 @@ body {
 /* Wordbook List */
 .wordbook-list {
   padding: 0 1rem;
+  width: 100%;
 }
 
 .wordbook-item {
@@ -278,6 +280,7 @@ body {
   border-radius: 8px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   overflow: hidden;
+  width: 100%;
 }
 
 .word-info {
@@ -347,15 +350,15 @@ body {
   }
 
   .result-card {
-    max-width: 700px;
+    width: calc(100% - 4rem);
     margin: 0 auto 1rem;
     padding: 2rem;
   }
 
   .wordbook-list {
-    max-width: 700px;
+    width: 100%;
     margin: 0 auto;
-    padding: 0;
+    padding: 0 2rem;
   }
 
   .wordbook-button {
