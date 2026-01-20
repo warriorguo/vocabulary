@@ -100,6 +100,29 @@ docker-compose down
 docker-compose down -v
 ```
 
+### Single Image Deployment
+
+Build and run the entire application (frontend + backend) in a single container:
+
+```bash
+# Build the image
+docker build -t vocabulary:latest .
+
+# Run the container
+docker run -d -p 80:80 \
+  -e DATABASE_URL="postgres://user:pass@host:5432/dbname?sslmode=disable" \
+  --name vocabulary \
+  vocabulary:latest
+
+# View logs
+docker logs -f vocabulary
+```
+
+The single image uses:
+- **nginx**: Serves frontend static files and proxies `/api/*` to backend
+- **supervisor**: Manages both nginx and Go backend processes
+- **Port 80**: Single exposed port for the entire application
+
 ## API Endpoints
 
 | Method | Endpoint | Description |
